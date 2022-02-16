@@ -1,0 +1,43 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    list-style: none;
+    margin-top: 5px;
+    &__detail {
+        background: $grey;
+        margin: 20px;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: flex-start;
+        padding: 30px;
+        border-radius: 25px;
+        @include box-shadow(5px, 5px, 5px, darken($grey, 10));
+        &:hover{
+            background: lighten($primary, 30);
+            .list__icon{
+                color:$primary;
+
+            }
+        }
+        &--puce {
+            position: absolute;
+            left: 27px;
+            padding: 7px;
+            font-size: 0.6rem;
+            margin-left: 0px;
+            border-radius: 50%;
+            background: $primary;
+            color: white;
+        }
+    }
+    &__paragraphe {
+        margin: 0;
+        padding-left: 30px;
+        font-weight: bold;
+    }
+    &__icon {
+        padding-left: 15px;
+        color: darken($grey, 50);
+    }
+}

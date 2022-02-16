@@ -1,19 +1,41 @@
 $primary: #9356DC;
 $secondary: #FF79DA;
 $tertiary: #99E2D0;
+$grey: #F6F6F6;
+$footer: #353535;
 
 $breakpoints: (
     mobile : 425px,
     tablet : 768px,
 );
 
-$font-size: (header: 6rm);
+$font-size: (
+    logo: 1.75rem,
+    title: 1.3rem,
+    body: 1.1rem,
+    icon: 2rem,
+    );
+
+$marginh3: (
+    left: 25px,
+);
+
 
 * {
     box-sizing: border-box;
+    object-fit: cover;
 }
 
 body {
     margin: 0;
     padding: 0;
+}
+
+h3 {
+    margin-left: map-get($marginh3, left);
+    margin-bottom: 0;
+}
+
+#titreRestaurant{
+    margin-bottom: 30px;
 }

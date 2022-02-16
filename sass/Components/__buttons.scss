@@ -1,0 +1,16 @@
+.btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(345deg, $primary 0%, $secondary 100%);
+    &__home {
+        margin-bottom: 50px;
+        margin-top: 15px;
+        padding: 15px 20px 15px 20px;
+    }
+}

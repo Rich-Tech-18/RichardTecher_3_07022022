@@ -1,0 +1,27 @@
+.footer {
+    background: $footer;
+    color: white;
+    padding-bottom: 30px;
+    &__title {
+        margin: 0;
+        padding-left: 25px;
+        padding-top: 35px;
+        font-family: map-get($police, title);
+    }
+    &__list {
+        padding-left: 25px;
+        list-style: none;
+        &--icon {
+            padding-right: 15px;
+        }
+        &--fork{
+            font-size: 0.7rem;
+        }
+        &--handshake{
+            font-size: 0.5rem;
+        }
+        &--style {
+            margin-bottom: 10px;
+        }
+    }
+}

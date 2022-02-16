@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'roboto';
+    src: url("../../../fonts/Roboto/Roboto-Regular.ttf") format('truetype');
+};
+
+@font-face {
+    font-family: 'shrikhand';
+    src: url("../../../fonts/Shrikhand/Shrikhand-Regular.ttf") format('truetype');
+};
+
+$police: (
+    title: shrikhand,
+    text: roboto,
+);
+
+
+* {
+    font-size: map-get($font-size, body);
+    font-family: map-get($police, text);
+};
+

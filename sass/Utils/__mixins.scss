@@ -1,11 +1,19 @@
-@mixin mobile_only {
-    @media screen and (max-width: map-get($breakpoints, mobile)){
+@mixin desktop_only {
+    @media screen and (min-width: map-get($breakpoints, tablet)){
         @content;
     }
 }
 
 @mixin tablet_only {
-    @media screen and (max-width: map-get($breakpoints, tablet)){
+    @media screen and (min-width: map-get($breakpoints, mobile)) and (max-width: map-get($breakpoints, tablet)){
         @content;
     }
+}
+
+@mixin border-radius($size) {
+    border-radius: $size;
+}
+
+@mixin box-shadow($x, $y, $blur, $color) {
+    box-shadow: $x $y $blur $color;
 }
