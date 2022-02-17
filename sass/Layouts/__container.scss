@@ -1,5 +1,14 @@
 .section {
     background-color: $grey;
+    &__menu{
+        padding-bottom: 30px;
+    }
+    &__btn{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 70px;
+        margin-top: 30px;
+    }
 }
 
 .reserver{

@@ -1,9 +1,18 @@
 .logo {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
-    &__image {
-        width: 45vw;
-        };
-   
+    align-items: center;
+    &__arrow{
+        position: absolute;
+        left: 25px;
+        top: 23px;
+    }
+    &__title{
+        font-size: map-get($font-size , logo);
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-family: map-get($police, title )
+    }
 };
