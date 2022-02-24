@@ -31,14 +31,30 @@
         margin-right: 15px;
         margin-top: 10px;
     }
+    @include desktop_only {
+        grid-area: presentation;
+    }
 }
 
 .fonctionnement {
     margin-top: 60px;
     margin-bottom: 60px;
+    @include desktop_only {
+        grid-area: fonctionnement;
+    }
 }
 
 .restaurant {
     padding-top: 40px;
     padding-bottom: 60px;
+    @include tablet_only {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    @include desktop_only {
+        grid-area: restaurant;
+        padding-top: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
 }

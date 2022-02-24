@@ -7,6 +7,12 @@
     background: white;
     @include box-shadow(5px, 5px, 5px, darken($grey, 10));
     @include border-radius(20px);
+    @include tablet_only {
+        width: 48vw;
+    }
+    @include desktop_only {
+        width: 48vw;
+    }
     &__new{
         background: $tertiary;
         color: darken($tertiary, 40);
@@ -15,16 +21,54 @@
         padding-left: 10px;
         padding-top: 5px;
         padding-bottom: 5px;
-        &--pos1{
+        border-radius: 3px;
+        &--pos{
             position: absolute;
-            top: 992px;
-            left: 280px;
+            transform: translate(52vw, -23vh);
+            @include desktop_only {
+                transform: translate(40vw, -23vh);
+            }
+            @include desktopXXL_only{
+                transform: translate(37vw, -23vh);
+            }
+            @include desktopXL_only {
+                transform: translate(35vw, -23vh);
+            }
+            @include desktopL_only {
+                transform: translate(33vw, -23vh);
+            }
+            @include desktopM_only {
+                transform: translate(31vw, -23vh);
+            }
+            @include desktopS_only {
+                transform: translate(29vw, -23vh);
+            }
+            @include desktopXS_only {
+                transform: translate(28vw, -23vh);
+            }
+            @include tabletXL_only{
+                transform: translate(33vw, -23vh);
+            }
+            @include tabletL_only {
+                transform: translate(32vw, -23vh);
+            }
+            @include tabletM_only {
+                transform: translate(29vw, -23vh);
+            }
+            @include tabletS_only {
+                transform: translate(27vw, -23vh);
+            }
+            @include mobileL_only {
+                transform: translate(62vw, -23vh);
+            }
+            @include mobileM_only {
+                transform: translate(58vw, -23vh);
+            }
+            @include mobileS_only {
+                transform: translate(52vw, -23vh);
+            }
         }
-        &--pos2 {
-            position: absolute;
-            top: 1312px;
-            left: 280px;
-        }
+        
     }
     &__image{
         width: 100%;
@@ -40,11 +84,12 @@
     &__paragraphe{
         flex-direction: column;
         display: flex;
+        position: relative;
         flex-wrap: wrap;
         height: 70px;
         justify-content: center;
         &--titre {
-            width: 42%;
+            // width: 42%;
             margin-top: 10px;
         }
         &--text{
@@ -52,23 +97,37 @@
             margin-left: 25px;
             margin-top: 0;
             margin-bottom: 0;
+            @include tablet_only {
+                width: 65%;
+            }
+            @include mobile_only {
+                width: 55%;
+            }
         }
         &--widthIcon{
             width: 20%;
             padding-top: 0px;
             margin-top: 0px;
             padding-left: 80px;
+            @include tablet_only {
+                padding-left: 0;
+            }
+            @include mobile_only{
+                width: 40%;
+                padding-left: 40px;
+            }
         }
         &--icon{
             font-size: map-get($font-size, icon);
             -webkit-text-stroke-width: 1px;
             -webkit-text-stroke-color: black;
             color: white;
-            transition: background-clip 200ms;
+            transition: color 1000ms ease-in-out;
             &:hover{
+                transform: scale(1);
                 background-image: linear-gradient($primary, $secondary);
                 background-clip: text;
-                -webkit-text-fill-color: transparent;
+                color: transparent;
             } 
             
         }
@@ -85,6 +144,12 @@
         background: white;
         border-radius: 30px 30px 0px 0px;
         padding-top: 10px;
+        @include tablet_only{
+            align-items: center;
+        }
+        @include desktop_only{
+            align-items: center;
+        }
         &--titre {
             width: 60%;
             margin-top: 10px;
@@ -98,39 +163,89 @@
             padding-top: 0px;
             margin-top: 0px;
             padding-left: 60px;
+            @include mobile_only {
+                padding-left: 20px;
+            }
         }
     }
     &__selection {
-        width: 90vw;
-        height: 9vh;
+        background: white;
+        opacity: 1;
+        width: 91vw;
+        height: 80px;
         margin: auto;
         margin-top: 15px;
         overflow: hidden;
-        background: white;
+        display: flex;
         @include box-shadow(5px, 5px, 5px, darken($grey, 10));
         @include border-radius(20px);
-        display: grid; 
-        grid-template-columns: 80% 20%; 
-        grid-template-rows: 50% 50%; 
-        gap: 0px 0px; 
-        grid-template-areas: 
-          "title . "
-          "description price";
+        @include desktop_only {
+            width: 32.5vw;
+        }
+        // display: flex;
+        // flex-wrap: wrap;
+        // align-items: center;
+        // display: grid; 
+        // grid-template-columns: 80% 20% 20%; 
+        // grid-template-rows: 50% 50%; 
+        // gap: 0px 0px; 
+        // grid-template-areas: 
+        //   "title . icon"
+        //   "description price icon";
+        // transition: transform 2s;
+        // animation: opacity 5s linear;
          &--title{
             grid-area: title;
             font-size: map-get($font-size, titleMenu);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-top: 15px;
+            width: 80%;
+            @include mobile_only {
+                margin-left: 3px;
+            }
         }
         &--price {
             grid-area: price;
             margin-top: 10px;
-            display: flex;
-            align-items: center;
+            // display: flex;
+            // align-items: center;
+            // width: 20%;
+            // height: 70%;
+            // margin-top: 0;
+            // margin-bottom: 35px;
         }
         &--description{
             grid-area: description;
-            padding-left: 25px;
+            // padding-left: 25px;
             margin-top: 10px;
-            font-size: map-get($font-size, description)
+            margin-left: 25px;
+            font-size: map-get($font-size, description);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 80%;
+            @include mobile_only {
+                margin-left: 3px;
+            }
+            @include desktop_only{
+                font-weight: map-get($font-size, descriptionDesktop);
+            }
+        }
+        &--checked{
+            margin-top: 0;
+            margin-bottom: 35px;
+            background-color: $tertiary;
+            color: white;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-area: icon;
+            transform: rotate(360deg);
+            transition: width 2s;
         }
         &--header{
             padding-top: 25px;
@@ -147,3 +262,73 @@
       }
         
     };
+
+
+    .card__selection:hover .card__selection--title {
+        transition: width 2s;
+        width: 70%;
+    }
+
+    .card__selection:hover  .card__selection--description{
+        transition: width 1s;
+        width: 70%;
+    }
+
+    // .card__selection:hover .card__selection--price{
+    //     transition: all 2s;
+    //     padding-left: 50px;
+    // }
+
+    .card__selection:hover .test2 {
+        transition: width 1s;
+        width: 30%;
+        @include mobile_only{
+            width: 18%;
+        }
+        @include desktop_only {
+            width: 15%;
+        }
+    }
+
+    .card__selection:hover .test2 p i{
+        transition: transform 750ms;
+        transform: rotate(720deg);
+    }
+
+    .test {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .test2{
+        width: 0%;
+    }
+
+
+
+    @keyframes opacity {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        
+    }
+
+    
+
+    @for $i from 1 through 3 {
+        .card__selection--#{$i} {
+            animation: opacity 1s*$i linear;
+            // opacity: 1;
+        };
+        
+    };
+
+
+    /******* https://www.youtube.com/watch?v=i6QiDxujUgs ****/

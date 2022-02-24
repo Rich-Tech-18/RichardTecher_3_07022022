@@ -4,6 +4,10 @@
     padding-left: 15px;
     list-style: none;
     margin-top: 5px;
+    @include tablet_only{
+        padding-left: 0px;
+        align-items: center;
+    }
     &__detail {
         background: $grey;
         margin: 20px;
@@ -12,7 +16,11 @@
         justify-content: flex-start;
         padding: 30px;
         border-radius: 25px;
+        align-items: center;
         @include box-shadow(5px, 5px, 5px, darken($grey, 10));
+        @include tablet_only {
+            width: 45vw;
+        }
         &:hover{
             background: lighten($primary, 30);
             .list__icon{
@@ -22,7 +30,7 @@
         }
         &--puce {
             position: absolute;
-            left: 27px;
+            transform: translate(-185%, 0%);
             padding: 7px;
             font-size: 0.6rem;
             margin-left: 0px;

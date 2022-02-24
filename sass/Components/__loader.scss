@@ -1,0 +1,177 @@
+// div {
+//     visibility: visible;
+//     height: 100vh;
+//     transition: visibility 0s;
+//     animation: display 1000ms;
+// }
+
+// @keyframes display {
+//     0% {
+//         transform: visibility 0s;
+//         visibility: visible;
+//     }
+  
+//     100% {
+//         transform: visibility 0s;
+//         visibility: hidden;
+//     }
+    
+// }
+
+// .progress {
+//     position: relative;
+//     &__bar {
+//     background-color: #15DEA5;
+//     border: 1px solid #011c37;
+//     transform: scaleX(0);
+//     text-align: center;
+//     height: 8px;
+//     transform-origin: 0% 50%;
+//     transition: transform 2000ms cubic-bezier(.32,0,.07,1);
+//     animation: progressBar 1000ms;
+//     }
+// }
+
+// @keyframes progressBar {
+//     0% {
+//         transform: scaleX(0);
+//         opacity: .1;
+//     }
+//     17% {
+//         transform: scaleX(.18);
+//     }
+//     24% {
+//         transform: scaleX(.4);
+//     }
+//     46% {
+//         transform: scaleX(.81);
+//     }
+//     85%,100% {
+//         opacity: 1;
+//     }
+//     100% {
+//         transform: scaleX(1);
+//     }
+    
+// }
+
+// .spinner{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100vh;
+//      width: 100vw;
+// }
+    
+// .spinner svg {
+//     animation: rotate 1.5s linear 10s;
+    
+// }
+    
+// .spinner circle {
+//     animation: 
+//     color 6s ease-in-out 10s,
+//     dash 1.5s ease-in-out 10s;
+//     fill: none;
+//     stroke-width: 3;
+//     stroke: black;
+// }
+    
+//     @keyframes rotate {
+//         from {
+//             transform: rotate(0deg);
+    
+//         }
+//         to {
+//             transform: rotate(360deg);
+//         }
+        
+//     }
+    
+    
+//     @keyframes color {
+//         100%, 0% {
+//             stroke: #9356DC;
+//         }
+//         25% {
+//             stroke: #99E2D0;
+//         }
+//         50% {
+//             stroke: #F6F6F6;
+//         }
+//         75% {
+//             stroke: #FF79DA;
+//         }
+        
+//     }
+    
+//     @keyframes dash {
+//         0% {
+//             stroke-dasharray: 1, 200;
+//             stroke-dashoffset: 0;
+//         }
+//         50% {
+//             stroke-dasharray: 89, 200;
+//             stroke-dashoffset: -35;
+//         }
+//         100% {
+//             stroke-dasharray: 89, 200;
+//             stroke-dashoffset: -124;
+//         }
+//     }
+
+body {
+  animation: stop 3s;
+}
+
+.loader-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: back 3s linear;
+    
+}
+#loader {
+  opacity: 0;
+  
+  margin: 0;
+  
+  border-radius: 50%;
+  
+  animation: spin 1500ms linear;
+}
+
+@keyframes stop {
+
+  0% {
+    overflow: hidden;
+  }
+}
+
+@keyframes back {
+
+  0% {
+    height: 100vh;
+  }
+}
+
+
+@keyframes spin {
+  0% { 
+    opacity: 1;
+    width: 120px;
+  height: 120px;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid $primary;
+    transform: rotate(0deg); 
+  }
+  100% { 
+    width: 120px;
+  height: 120px;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid $primary;
+    transform: rotate(360deg);
+   }
+}
+
+

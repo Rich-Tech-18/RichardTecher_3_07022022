@@ -5,8 +5,20 @@ $grey: #F6F6F6;
 $footer: #353535;
 
 $breakpoints: (
-    mobile : 425px,
+    desktopXXL : 1800px,
+    desktopXL : 1524px,
+    desktopL: 1324px,
+    desktop: 1024px,
+    desktopS: 950px,
+    desktopXS: 825px,
     tablet : 768px,
+    tabletL : 700px,
+    tabletM : 600px,
+    tabletS : 500px,
+    mobile : 425px,
+    mobileL : 406px,
+    mobileM : 370px,
+    mobileS : 320px,
 );
 
 $font-size: (
@@ -15,6 +27,7 @@ $font-size: (
     body: 1.1rem,
     icon: 2rem,
     description: 0.8rem,
+    descriptionDesktop : 0.7rem,
     titleMenu: 1rem,
     );
 
@@ -33,6 +46,7 @@ body {
     padding: 0;
 }
 
+
 h3 {
     margin-left: map-get($marginh3, left);
     margin-bottom: 0;
@@ -40,4 +54,49 @@ h3 {
 
 #titreRestaurant{
     margin-bottom: 30px;
+    @include tablet_only {
+        padding-right: 70vw;
+    }
+    @include desktop_only{
+        padding-right: 70vw;
+    }
+}
+
+.grid__desktop{
+    @include desktop_only {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    grid-template: 
+                    "presentation fonctionnement"
+                    "restaurant restaurant";
+    }
+
+}
+
+.grid__desktop-only-choice {
+    @include desktop_only {
+        display: grid;
+        grid-template-columns: 33% 33% 33% !important;
+        grid-template: 
+                        "entrees plats desserts";
+        }
+    // @include tablet_only {
+    //     display: block;
+    // }
+    // @include mobile_only {
+    //     display: block;
+    // }
+}
+
+#entrees {
+    grid-area: entrees;
+}
+
+#plats {
+    grid-area: plats;
+}
+
+#desserts {
+    grid-area: desserts;
 }

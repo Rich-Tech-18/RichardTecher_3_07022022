@@ -4,12 +4,95 @@
     }
 }
 
+@mixin desktopXXL_only {
+    @media screen and (min-width: map-get($breakpoints, desktopXL)) and (max-width: map-get($breakpoints, desktopXXL)){
+        @content;
+    }
+}
+
+@mixin desktopXL_only {
+    @media screen and (min-width: map-get($breakpoints, desktopL)) and (max-width: map-get($breakpoints, desktopXL)){
+        @content;
+    }
+}
+
+@mixin desktopL_only {
+    @media screen and (min-width: map-get($breakpoints, desktop)) and (max-width: map-get($breakpoints, desktopL)){
+        @content;
+    }
+}
+
+@mixin desktopM_only {
+    @media screen and (min-width: map-get($breakpoints, desktopS)) and (max-width: map-get($breakpoints, desktop)){
+        @content;
+    }
+}
+
+@mixin desktopS_only {
+    @media screen and (min-width: map-get($breakpoints, desktopXS)) and (max-width: map-get($breakpoints, desktopS)){
+        @content;
+    }
+}
+
+@mixin desktopXS_only {
+    @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, desktopXS)){
+        @content;
+    }
+}
+
+@mixin tabletXL_only {
+    @media screen and (min-width: map-get($breakpoints, tabletL)) and (max-width: map-get($breakpoints, tablet)){
+        @content;
+    }
+}
+@mixin tabletL_only {
+    @media screen and (min-width: map-get($breakpoints, tabletM)) and (max-width: map-get($breakpoints, tabletL)){
+        @content;
+    }
+}
+
+@mixin tabletM_only {
+    @media screen and (min-width: map-get($breakpoints, tabletS)) and (max-width: map-get($breakpoints, tabletM)){
+        @content;
+    }
+}
+
+@mixin tabletS_only {
+    @media screen and (min-width: map-get($breakpoints, mobile)) and (max-width: map-get($breakpoints, tabletS)){
+        @content;
+    }
+}
+
 @mixin tablet_only {
     @media screen and (min-width: map-get($breakpoints, mobile)) and (max-width: map-get($breakpoints, tablet)){
         @content;
     }
 }
 
+@mixin mobileL_only {
+    @media screen and (min-width: map-get($breakpoints, mobileL)) and (max-width: map-get($breakpoints, mobile)){
+        @content;
+    }
+}
+
+@mixin mobileM_only {
+    @media screen and (min-width: map-get($breakpoints, mobileM)) and (max-width: map-get($breakpoints, mobileL)){
+        @content;
+    }
+}
+
+@mixin mobileS_only {
+    @media screen and (min-width: map-get($breakpoints, mobileS)) and (max-width: map-get($breakpoints, mobileM)){
+        @content;
+    }
+}
+
+
+@mixin mobile_only {
+    @media screen and (min-width: 0px) and (max-width: map-get($breakpoints, mobileL)){
+        @content;
+    }
+}
 @mixin border-radius($size) {
     border-radius: $size;
 }
@@ -17,3 +100,4 @@
 @mixin box-shadow($x, $y, $blur, $color) {
     box-shadow: $x $y $blur $color;
 }
+
