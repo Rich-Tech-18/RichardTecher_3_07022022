@@ -118,17 +118,103 @@
             }
         }
         &--icon{
-            font-size: map-get($font-size, icon);
-            -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: black;
-            color: white;
-            transition: color 1000ms ease-in-out;
-            &:hover{
-                transform: scale(1);
-                background-image: linear-gradient($primary, $secondary);
-                background-clip: text;
-                color: transparent;
-            } 
+            fill: transparent;
+            stroke: url(#mygradient);
+            stroke-width: 20px;
+            cursor: pointer;
+            position: relative;
+            align-self: center;
+            &-main{
+               width: 10vw;
+                align-self: center; 
+                overflow: visible;
+                &:hover path {
+                    animation: stroke-animation 2s ease-in-out forwards;
+                }
+                @include tablet_only {
+                    width: 5vw;
+                }
+                @include desktop_only {
+                    width: 3vw;
+                }
+            }
+            &-background{
+                width: 10vw;
+                overflow: visible;
+                position: absolute;
+                left: 0;
+                right: 0;
+                z-index: -1;
+                stroke: none;
+                @include tablet_only {
+                    width: 5vw;
+                }
+                @include desktop_only {
+                    width: 3vw;
+                }
+            }
+            path {
+                stroke-dashoffset: 0;
+                stroke-dasharray: 1550;
+                transform-origin: center;
+              }
+             
+            @keyframes stroke-animation {
+                0% {
+                  stroke-dashoffset: 0;
+                }
+                30% {
+                  stroke-dashoffset: 1550;
+                }
+                60% {
+                  stroke-dashoffset: 3100;
+                  fill: transparent;
+                  transform: scale(1);
+                }
+                80% {
+                  fill: url(#mygradient);
+                  transform: scale(1.1);
+                }
+                90% {
+                  transform: scale(1);
+                }
+                100% {
+                  stroke-dashoffset: 3100;
+                  fill: url(#mygradient);
+                }
+              }
+              
+              @keyframes fade-animation {
+                70% {
+                  fill: transparent;
+                  transform: scale(1);
+                }
+                80% {
+                  fill: url(#mygradient);
+                  transform: scale(1.1);
+                  opacity: 1;
+                }
+                90% {
+                  opacity: 1;
+                }
+                100% {
+                  transform: scale(2.5);
+                  opacity: 0;
+                }
+              }
+            
+            
+            // font-size: map-get($font-size, icon);
+            // -webkit-text-stroke-width: 1px;
+            // -webkit-text-stroke-color: black;
+            // color: white;
+            // transition: color 1000ms ease-in-out;
+            // &:hover{
+            //     transform: scale(1);
+            //     background-image: linear-gradient($primary, $secondary);
+            //     background-clip: text;
+            //     color: transparent;
+            // } 
             
         }
     }
@@ -205,6 +291,9 @@
             @include mobile_only {
                 margin-left: 3px;
             }
+            @include desktopS_only {
+                width: 70%;
+            }
         }
         &--price {
             grid-area: price;
@@ -232,6 +321,10 @@
             @include desktop_only{
                 font-weight: map-get($font-size, descriptionDesktop);
             }
+            @include desktopS_only {
+                width: 70%;
+            }
+        
         }
         &--checked{
             margin-top: 0;
@@ -286,7 +379,7 @@
             width: 18%;
         }
         @include desktop_only {
-            width: 15%;
+            width: 10%;
         }
     }
 
