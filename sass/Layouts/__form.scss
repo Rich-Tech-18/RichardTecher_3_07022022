@@ -3,13 +3,16 @@
     opacity: 1;
     display: flex;
     justify-content: center;
-    height: 5vh;
     align-items: center;
     border-top: darken($grey, 10) solid 1px;
     &__text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         &--color{
             border: none;
             background-color: darken($grey, 5);
+            height: 5vh;
             &::placeholder{
             font-weight: bold;
             font-size: map-get($font-size, body);
