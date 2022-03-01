@@ -30,9 +30,13 @@
         }
         &--puce {
             position: absolute;
-            transform: translate(-185%, 0%);
-            padding: 7px;
-            font-size: 0.6rem;
+            transform: translate(-40px, 0px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25px;
+            height: 25px;
+            font-size: 0.55rem;
             margin-left: 0px;
             border-radius: 50%;
             background: $primary;
