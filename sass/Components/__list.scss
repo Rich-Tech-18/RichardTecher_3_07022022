@@ -19,7 +19,7 @@
         align-items: center;
         @include box-shadow(5px, 5px, 5px, darken($grey, 10));
         @include tablet_only {
-            width: 45vw;
+            width: 350px;
         }
         &:hover{
             background: lighten($primary, 30);
