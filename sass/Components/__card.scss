@@ -1,4 +1,9 @@
+/******************* contenue pour les élément de type card *****************/
+
+
+
 .card {
+    /********************* forme général ****/
     width: 90vw;
     // height: 35vh;
     margin: auto;
@@ -14,6 +19,7 @@
         width: 48vw;
     }
     &__new{
+        /******************* contenue pour l'élément nouveauté de index.html ****/
         background: $tertiary;
         color: darken($tertiary, 40);
         font-weight: bold;
@@ -69,6 +75,7 @@
         
     }
     &__image{
+        /***** image des card de index.html ***/
         width: 100%;
         height: 175px;
         &--menu{
@@ -156,7 +163,7 @@
                 stroke-dasharray: 1550;
                 transform-origin: center;
               }
-             
+             /**** animation pour le coeur, effet des bordure qui bougent ***/
             @keyframes stroke-animation {
                 0% {
                   stroke-dashoffset: 0;
@@ -181,7 +188,7 @@
                   fill: url(#mygradient);
                 }
               }
-              
+              /**** animation coeur, le coeur ce rempli *****/
               @keyframes fade-animation {
                 70% {
                   fill: transparent;
@@ -217,6 +224,7 @@
         }
     }
     &__menu {
+        /****** version card pour les menu ****/
         background: $grey !important;
         flex-direction: column;
         display: flex;
@@ -398,7 +406,7 @@
     }
 
 
-
+/**** animation pour les menu au démarrage de la page ****/
     @keyframes opacity {
         0% {
             opacity: 0;

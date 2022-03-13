@@ -1,8 +1,15 @@
+/************************ partie qui concerne les éléments généraux du site web *************/
+/**************** création des variables des couleur princicpale du site *********/
+
+
 $primary: #9356DC;
 $secondary: #FF79DA;
 $tertiary: #99E2D0;
 $grey: #F6F6F6;
 $footer: #353535;
+
+
+/************** breakpoint retenue pour le responsive design *************/
 
 $breakpoints: (
     desktopXXL : 1800px,
@@ -21,6 +28,9 @@ $breakpoints: (
     mobileS : 320px,
 );
 
+
+/********************** taille des police *********/
+
 $font-size: (
     logo: 1.7rem,
     title: 1.3rem,
@@ -31,20 +41,23 @@ $font-size: (
     titleMenu: 1rem,
     );
 
-$marginh3: (
-    left: 25px,
-);
 
+
+
+/********************* base pour tout les elements du site *************/
 
 * {
     box-sizing: border-box;
     object-fit: cover;
 }
 
+/************** mise en form basique des liens *********/
 a {
     text-decoration: none;
     color: black;
 }
+
+/**************** enleve les marge du body *********/
 
 body {
     margin: 0;
@@ -52,10 +65,19 @@ body {
 }
 
 
+/****************** spécifité pour les titre h3 **********/
+
+$marginh3: (
+    left: 25px,
+);
+
 h3 {
     margin-left: map-get($marginh3, left);
     margin-bottom: 0;
 }
+
+
+/******************* mise en place de la forme général des menus *****/
 
 #titreRestaurant{
     margin-bottom: 30px;

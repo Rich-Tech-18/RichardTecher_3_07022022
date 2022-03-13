@@ -1,4 +1,8 @@
+/**************** élément button du site web ***********/
+
+
 .btn {
+    /********* forme général du bouton ***/
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 20px;
@@ -14,11 +18,13 @@
         @include box-shadow(7px, 7px, 7px, lighten($grey, 10))
     }
     &__home {
+        /**** forme spécifique sur la page index.html ****/
         margin-bottom: 50px;
         margin-top: 15px;
         padding: 15px 20px 15px 20px;
     }
     &__shippin{
+        /******** forme sécifique sur les pages menus ****/
         padding-right: 50px;
         padding-left: 50px;
     }
