@@ -105,7 +105,7 @@ h3 {
     @include desktop_only {
         display: grid;
         grid-template-columns: 33% 33% 33% !important;
-        grid-template: 
+        grid-template-areas: 
                         "entrees plats desserts";
         }
     // @include tablet_only {

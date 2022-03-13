@@ -325,7 +325,7 @@
                 margin-left: 3px;
             }
             @include desktop_only{
-                font-weight: map-get($font-size, descriptionDesktop);
+                font-size: map-get($font-size, descriptionDesktop);
             }
             @include desktopS_only {
                 width: 70%;
@@ -356,7 +356,7 @@
         &--bar{
             width: 12vw;
             border: 2px solid $tertiary;
-            margin-left: 0;
+            margin-left: 20px;
         }
       }
         
